@@ -1,8 +1,16 @@
 {
   "name": "calculadora-mci",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "version": "0.0.2",
+  "author": "MrLeo UWU",
+  "homepage": "https://github.com/MrLeoUWU/calculadora-mci",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrLeoUWU/calculadora-mci"
+  },
+  "bugs": {
+    "url": "https://github.com/MrLeoUWU/calculadora-mci/issues"
+  },
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
