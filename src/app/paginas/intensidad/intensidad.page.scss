@@ -1,0 +1,85 @@
+  /* Fondo de la página */
+  ion-content {
+    --background: #fff3e0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  /* Botones de intensidad */
+  ion-button {
+    --background: #ff6f00;
+    --color: #fff;
+    --border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    margin-bottom: 12px;
+    transition: 0.3s;
+
+    &:hover {
+      --background: #ff8f00;
+    }
+  }
+
+  ion-button[fill="outline"] {
+    --border-color: #ff6f00;
+    --color: #ff6f00;
+    --background: transparent;
+  }
+
+  /* Toolbar */
+  ion-toolbar {
+    --background: orange;
+  }
+
+  ion-toolbar ion-title {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  /* Menú hamburguesa y flecha */
+  ion-menu-button,
+  ion-buttons[slot="start"] ion-button ion-icon {
+    --color: #fff !important;
+    text-shadow: none;
+  }
+
+  /* Imagen de intensidad */
+  .intensidad-img {
+    width: 100%;
+    max-width: 280px;   /* Reduce el tamaño */
+    margin: 15px auto 0;
+    display: block;
+    border-radius: 12px;
+  }
+
+  /* Forzar flecha de regreso en blanco */
+ion-buttons[slot="start"] ion-icon {
+  color: #fff !important;
+}
+  /* Quitar fondo del botón de regreso */
+  ion-buttons[slot="start"] ion-button {
+    background: transparent !important;
+  }
+  /* Quitar sombra del botón de regreso */
+  ion-buttons[slot="start"] ion-button ion-icon {
+    box-shadow: none !important;
+  }
+  /* Quitar borde del botón de regreso */
+  ion-buttons[slot="start"] ion-button ion-icon {
+    border: none !important;
+  }
+  /* Quitar padding del botón de regreso */
+  ion-buttons[slot="start"] ion-button ion-icon {
+    padding: 0 !important;
+  }
+  /* Quitar mínimo ancho del botón de regreso */
+  ion-buttons[slot="start"] ion-button ion-icon {
+    min-width: 0 !important;
+  }
+  /* Quitar efecto ripple al presionar el botón de regreso */
+  ion-buttons[slot="start"] ion-button ion-icon {
+    --ripple-color: transparent;
+  }

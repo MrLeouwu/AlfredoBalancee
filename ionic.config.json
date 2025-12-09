@@ -1,0 +1,7 @@
+{
+  "name": "CalculadoraMCI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

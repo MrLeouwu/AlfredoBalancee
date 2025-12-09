@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Resumen de calorías</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrar()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <p class="calorias-verde">
+    Debes consumir un total de {{ calorias }} kcal/día
+  </p>
+
+  <p>
+    Se han actualizado tus dietas recomendadas en la pestaña 
+    <span class="dieta-azul" (click)="irADieta()">¡Dieta Semanal!</span>
+  </p>
+
+  <ion-button expand="block" (click)="cerrar()">Aceptar</ion-button>
+
+  <!-- Imagen al final del modal -->
+  <img 
+    src="assets/img/modal.jpg" 
+    class="modal-img" 
+    alt="Resultado del plan"
+  />
+</ion-content>

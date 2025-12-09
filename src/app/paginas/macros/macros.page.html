@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Botón de regresar al inicio al lado izquierdo -->
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="'/inicio'">
+        <ion-icon slot="icon-only" [icon]="arrowBack"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Macros</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content class="ion-padding" id="main-content">
+  <!-- Buscador de alimentos -->
+  <ion-item *ngIf="!selected">
+    <ion-label position="floating">Buscar alimento</ion-label>
+    <ion-input [(ngModel)]="query" (ionInput)="buscar()"></ion-input>
+  </ion-item>
+
+  <!-- Lista de sugerencias -->
+  <ion-list *ngIf="!selected && sugerencias.length > 0">
+    <ion-item *ngFor="let alimento of sugerencias" button (click)="seleccionar(alimento)">
+      {{ alimento.description }}
+    </ion-item>
+  </ion-list>
+
+  <!-- Información del alimento seleccionado -->
+  <div *ngIf="selected" class="ion-margin-top">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ selected.description }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Gramos:</ion-label>
+          <ion-input type="number" [(ngModel)]="gramos"></ion-input>
+        </ion-item>
+        <ion-button expand="block" class="ion-margin-top" (click)="calcular()">Calcular macros</ion-button>
+        <ion-button expand="block" fill="outline" class="ion-margin-top" (click)="selected=null; resultado=null; gramos=100">
+          Cambiar alimento
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Resultado del cálculo -->
+  <div *ngIf="resultado" class="ion-margin-top">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Macros para {{ gramos }} g</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Calorías: {{ resultado.calories }} kcal</p>
+        <p>Proteína: {{ resultado.protein }} g</p>
+        <p>Carbohidratos: {{ resultado.carbs }} g</p>
+        <p>Grasas: {{ resultado.fat }} g</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

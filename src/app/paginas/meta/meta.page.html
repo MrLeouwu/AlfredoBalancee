@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar> 
+    <!-- Botón de regresar al inicio al lado izquierdo -->
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="'/inicio'">
+        <ion-icon slot="icon-only" [icon]="arrowBack"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Objetivo</ion-title>
+
+   <ion-buttons slot="end">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="main-content">
+  <ion-grid>
+    <ion-row>
+
+      <!-- Déficit -->
+      <ion-col size="12" size-md="4">
+        <ion-card (click)="seleccionar('deficit')">
+          <img src="assets/img/deficit.jpg">
+          <ion-card-header>
+            <ion-card-title></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Comer menos calorías de las que quemas para perder peso de manera controlada.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Mantenimiento -->
+      <ion-col size="12" size-md="4">
+        <ion-card (click)="seleccionar('mantenimiento')">
+          <img src="assets/img/mantenimiento.jpg" class="card-img">
+          <ion-card-header>
+            <ion-card-title></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Consumir la misma cantidad de calorías que quemas para mantener tu peso actual.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Superávit -->
+      <ion-col size="12" size-md="4">
+        <ion-card (click)="seleccionar('superavit')">
+          <img src="assets/img/superavit.jpg" class="card-img">
+          <ion-card-header>
+            <ion-card-title></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Consumir más calorías de las que quemas para ganar masa muscular o peso.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

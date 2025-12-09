@@ -1,0 +1,171 @@
+  /* calculadora.page.scss */
+
+  /* Fondo de toda la página: naranja muy claro */
+  #main-content {
+    --background: #fff3e0; /* naranja muy claro */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  /* Estilo de los inputs */
+  ion-item {
+    --background: #fff;
+    --border-radius: 12px;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  ion-label {
+    font-weight: 600;
+    color: #ff6f00; /* color naranja oscuro */
+  }
+
+  /* Estilo del select */
+  ion-select {
+    --background: #fff;
+    --border-radius: 12px;
+    --placeholder-color: #ff8f00;
+  }
+
+  /* Botón de calcular */
+  .calcular-btn {
+    --background: #ff6f00; /* naranja normal */
+    --color: #fff;
+    --border-radius: 12px;
+    --background-activated: #FF6B00;
+    --background-focused: #FF6B00;
+    --background-hover: #FF7F24;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+    &:hover {
+      --background: #ff8f00;
+    }
+  }
+
+  /* Resultado del MCI */
+  div h2 {
+    color: #ff6f00;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  /* Botón de menú y flecha */
+  ion-menu-button, ion-button[slot="end"] {
+    --background: transparent;
+    --ion-color-base: #fff; /* flecha blanca */
+    font-size: 1.5rem;
+  }
+
+  /* Barra del header */
+  ion-toolbar {
+    --background: orange; /* Fondo naranja */
+  }
+
+  ion-toolbar ion-title {
+    color: white; /* Texto del header en blanco */
+  }
+
+  /* Menú lateral */
+  ion-menu {
+    --background: #fff3e0; /* fondo naranja muy claro */
+    --ion-color-base: #ff6f00; /* color naranja oscuro */
+  }
+
+  ion-menu ion-item {
+    --background: #fff; /* fondo blanco para los items */
+    --color: #ff6f00; /* texto naranja oscuro */
+    --border-radius: 8px;
+    margin: 5px 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Botón de menú y flecha al lado derecho */
+  ion-menu-button,
+  ion-button[slot="end"] {
+    --background: transparent;    /* Fondo transparente */
+    --color: #fff;                /* Color del icono blanco */
+    font-size: 1.5rem;            /* Tamaño del icono */
+  }
+
+  /* Hacer que el icono de la flecha sea blanco */
+  ion-buttons[slot="start"] ion-button ion-icon {
+    color: #fff !important;
+  }
+
+  .sexo-radios {
+    display: flex;
+    gap: 1rem;
+    label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      input[type="radio"] {
+        margin-right: 0.5rem;
+        accent-color: orange; // color de relleno al seleccionar
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+/* Texto informativo para dirigir a Plan de Calorías */
+.tip {
+  background: linear-gradient(135deg, #fff0db, #ffe0b2);
+  border-left: 5px solid #ff6f00;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #5a3a00;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  animation: fadeInUp 0.4s ease;
+}
+
+/* Link hacia Plan de Calorías */
+.link-intensidad {
+  color: #ff6f00;
+  font-weight: 800;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+/* Subrayado animado */
+.link-intensidad::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ff6f00;
+  transition: width 0.3s ease;
+}
+
+.link-intensidad:hover::after {
+  width: 100%;
+}
+
+/* Efecto táctil en móvil */
+.link-intensidad:active {
+  opacity: 0.7;
+  transform: scale(0.97);
+}
+
+/* Animación suave */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

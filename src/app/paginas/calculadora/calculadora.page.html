@@ -1,0 +1,95 @@
+<!-- HEADER -->
+<ion-header>
+  <ion-toolbar>
+
+    <!-- Botón regresar -->
+    <ion-buttons slot="start">
+      <ion-button routerLink="/inicio">
+        <ion-icon slot="icon-only" [icon]="arrowBack"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Calculadora de MCI</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- CONTENIDO PRINCIPAL -->
+<ion-content id="main-content" class="ion-padding">
+
+  <!-- FORMULARIO -->
+  <ion-item>
+    <ion-label>Peso (kg)</ion-label>
+    <ion-input type="number" [(ngModel)]="peso"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Altura (cm)</ion-label>
+    <ion-input type="number" [(ngModel)]="altura"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Edad</ion-label>
+    <ion-input type="number" [(ngModel)]="edad"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Sexo</ion-label>
+    <div class="sexo-radios">
+      <label>
+        <input type="radio" name="sexo" value="hombre" [(ngModel)]="sexo">
+        Hombre
+      </label>
+
+      <label>
+        <input type="radio" name="sexo" value="mujer" [(ngModel)]="sexo">
+        Mujer
+      </label>
+    </div>
+  </ion-item>
+
+  <ion-button expand="block"
+              class="calcular-btn ion-margin-top"
+              (click)="calcular()">
+    Calcular MCI
+  </ion-button>
+
+  <!-- RESULTADO -->
+  <div *ngIf="mciResult !== null" class="ion-margin-top resultado">
+    <h2>Tu MCI: {{ mciResult }} kcal/día</h2>
+    <p class="resultado-info">
+      Este valor representa la energía que tu cuerpo necesita diariamente.
+    </p>
+  </div>
+
+  <!-- INFO EDUCATIVA -->
+  <div class="info-box recomendacion-plan">
+
+    <h3>¿Cómo planificar tus calorías?</h3>
+
+    <p>
+      Una vez que conoces tu MCI, puedes organizar cuántas calorías consumir
+      dependiendo de tu objetivo personal.
+    </p>
+
+    <ul>
+      <li>🔻 Bajar de peso con déficit calórico</li>
+      <li>⚖️ Mantener tu peso actual</li>
+      <li>🔺 Ganar masa muscular</li>
+    </ul>
+
+    <p class="tip">
+        Dirígete ahora a
+      <a routerLink="/meta" class="link-intensidad">
+        Plan de Calorías
+      </a>
+      para continuar.
+    </p>
+
+  </div>
+
+</ion-content>

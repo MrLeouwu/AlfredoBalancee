@@ -1,0 +1,85 @@
+/* meta.page.scss */
+
+/* Fondo de toda la página: naranja muy claro */
+ion-content {
+  --background: #fff3e0; /* naranja muy claro */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+/* Texto de la página */
+p {
+  font-weight: 600;
+  color: #ff6f00; /* naranja oscuro */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Botones de selección */
+ion-button {
+  --background: #ff6f00; /* naranja normal */
+  --color: #fff;          /* texto blanco */
+  --border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  margin-bottom: 12px;
+  transition: 0.3s;
+
+  &:hover {
+    --background: #ff8f00; /* naranja más brillante al pasar el mouse */
+  }
+}
+
+ion-button[fill="outline"] {
+  --border-color: #ff6f00;
+  --color: #ff6f00;
+  --background: transparent;
+}
+
+/* Toolbar */
+ion-toolbar {
+  --background: orange; /* fondo naranja normal */
+}
+
+ion-toolbar ion-title {
+  color: white;         /* título blanco */
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Botón de menú hamburguesa (derecha) */
+ion-menu-button {
+  --background: transparent; /* quitar fondo */
+  --color: #fff;             /* blanco para el menú */
+}
+
+/* Flecha de regresar (izquierda) */
+ion-buttons[slot="start"] ion-button {
+  background: transparent !important;   /* quitar fondo */
+  --background: transparent !important; /* asegurar que variables internas también sean transparentes */
+  box-shadow: none !important;          /* quitar sombra */
+  border: none !important;              /* quitar borde */
+  padding: 0 !important;                /* quitar padding */
+  min-width: 0 !important;              /* quitar mínimo ancho */
+  --ripple-color: transparent;          /* quitar efecto ripple al presionar */
+}
+
+ion-buttons[slot="start"] ion-button ion-icon {
+  color: #fff !important;               /* icono blanco */
+}
+
+/* Estilo del texto dentro de las cards */
+ion-card-content {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444;
+  text-align: center;
+
+  padding: 14px 16px;
+  margin-top: 4px;
+
+  border-top: 1px solid #ffe0b2; /* separación sutil */
+  background:#fffaf5;          /* fondo crema muy claro */
+}

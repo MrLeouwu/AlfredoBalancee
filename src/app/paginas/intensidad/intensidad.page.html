@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+
+    <!-- Botón regresar a Meta -->
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="'/meta'">
+        <ion-icon slot="icon-only" [icon]="arrowback"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Intensidad</ion-title>
+  
+    <ion-buttons slot="end">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- Contenido principal -->
+<ion-content class="ion-padding" id="main-content">
+
+  <p>Selecciona la intensidad de tu entrenamiento según tu objetivo.</p>
+
+  <ion-button expand="block" (click)="calcularIntensidad('ligero')">
+    Baja Intensidad
+  </ion-button>
+
+  <ion-button expand="block" (click)="calcularIntensidad('moderado')">
+    Media Intensidad
+  </ion-button>
+
+  <ion-button expand="block" (click)="calcularIntensidad('robusto')">
+    Alta Intensidad
+  </ion-button>
+
+  <!-- Imagen de intensidad -->
+  <img
+    src="assets/img/intensidad.jpg"
+    alt="Intensidad de entrenamiento"
+    class="intensidad-img"
+  />
+
+</ion-content>

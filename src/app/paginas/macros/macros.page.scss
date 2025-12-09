@@ -1,0 +1,43 @@
+/* Toolbar */
+ion-toolbar {
+  --background: orange; /* mismo naranja que quieres */
+}
+
+/* Título del toolbar */
+ion-toolbar ion-title {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Botón de menú hamburguesa (derecha) */
+ion-menu-button {
+  --color: #fff; /* blanco para el menú */
+}
+
+/* Flecha de regresar (izquierda) */
+ion-buttons[slot="start"] ion-button ion-icon {
+  color: white !important; /* mismo naranja que el toolbar */
+  text-shadow: none; /* quitar sombras que oscurecen */
+}
+
+/* Botones dentro de los cards de Macros */
+ion-card ion-button {
+  --background: #ff6f00; /* naranja normal */
+  --color: #fff;          /* texto blanco */
+  --border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: 0.3s;
+
+  &:hover {
+    --background: #ff8f00; /* naranja más brillante al pasar el mouse */
+  }
+}
+
+/* Botones con fill="outline" */
+ion-card ion-button[fill="outline"] {
+  --border-color: #ff6f00;
+  --color: #ff6f00;
+  --background: transparent;
+}

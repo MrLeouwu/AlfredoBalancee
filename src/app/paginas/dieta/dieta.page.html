@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Botón regresar a Meta -->
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="'/inicio'">
+        <ion-icon slot="icon-only" [icon]="arrowBackOutline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Tu Dieta</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+
+
+<!-- Contenido principal -->
+<ion-content class="ion-padding" id="main-content">
+  <div *ngIf="cargando" class="ion-text-center">
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Cargando tu plan de dieta...</p>
+  </div>
+
+  <div *ngIf="error" class="ion-text-center">
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="dieta">
+    <h2 class="ion-text-center">Plan Diario - {{ calorias }} kcal</h2>
+
+    <ion-card *ngFor="let comida of dieta.meals">
+      <img [src]="'https://spoonacular.com/recipeImages/' + comida.id + '-480x360.jpg'" class="card-img">
+      <ion-card-header>
+        <ion-card-title>{{ comida.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p [innerHTML]="comida.summary || 'Descripción no disponible'"></p>
+        <p>Porciones: {{ comida.servings }}</p>
+        <a [href]="comida.sourceUrl" target="_blank">Ver receta completa</a>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Resumen Nutricional</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Total Calorías: {{ dieta.nutrients.calories | number:'1.0-0' }}</p>
+        <p>Proteínas: {{ dieta.nutrients.protein | number:'1.0-0' }} g</p>
+        <p>Carbohidratos: {{ dieta.nutrients.carbohydrates | number:'1.0-0' }} g</p>
+        <p>Grasas: {{ dieta.nutrients.fat | number:'1.0-0' }} g</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
